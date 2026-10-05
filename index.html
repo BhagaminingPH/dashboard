@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portal & Launcher</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.js"></script>
+
+  <!-- font FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+
+
+
+
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Styles for Ambient Backgrounds & Sheen Effects -->
+  <link rel="stylesheet" href="my.css">
+</head>
+
+<body
+  class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Dynamic Ambient Background Glows -->
+  <div class="ambient-bg">
+    <div class="ambient-orb w-[400px] h-[400px] bg-blue-500 top-[-100px] left-[-100px] animate-float"></div>
+    <div class="ambient-orb w-[500px] h-[500px] bg-purple-600 bottom-[-150px] right-[-100px] animate-float"
+      style="animation-delay: -3s;"></div>
+    <div class="ambient-orb w-[350px] h-[350px] bg-emerald-500 top-[40%] left-[50%] -translate-x-1/2 animate-float"
+      style="animation-delay: -1.5s;"></div>
+  </div>
+
+  <header
+    class="sticky top-0 z-40 w-full glass-nav border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
+    <div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3 shrink-0">
+        <!-- <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-purple-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25">
+          <i class="fa-solid fa-cubes text-xl"></i>
+        </div> -->
+        <div>
+          <img class="w-35 rounded-xl  flex items-center justify-center text-white " src="img/mylogo.webp"
+            alt="ph-Mining" class="" width="70">
+          <!-- <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-slate-400 bg-clip-text text-transparent">
+            DEVHUB
+          </span>
+          <span class="hidden sm:inline-block text-xs font-semibold px-2 py-0.5 ml-2 rounded-full bg-brand-100 text-brand-700 dark:bg-brand-900/50 dark:text-brand-300 border border-brand-200 dark:border-brand-700/50">
+            v2.5
+          </span> -->
+        </div>
+      </div>
+
+      <!-- Quick Search Bar (Header integration) -->
+      <div class="flex-1 max-w-md hidden md:block">
+        <div class="relative">
+          <i
+            class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-sm"></i>
+          <input type="text" id="searchInputDesktop" placeholder="Search tools, docs, apps... (Ctrl + K)"
+            class="w-full pl-10 pr-4 py-2 bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/60 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500" />
+        </div>
+      </div>
+
+      <!-- Right Header Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+
+        <!-- Theme Toggle Button -->
+        <button id="themeToggleBtn" aria-label="Toggle Theme"
+          class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 flex items-center justify-center transition-all hover:scale-105 active:scale-95">
+          <i class="fa-solid fa-sun hidden dark:block text-amber-400 text-lg"></i>
+          <i class="fa-solid fa-moon block dark:hidden text-slate-700 text-lg"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-8">
+
+    <!-- Hero / Welcome Banner -->
+    <!-- <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-6 sm:p-8 text-white shadow-2xl border border-slate-800">
+      <div class="absolute -right-10 -top-10 w-64 h-64 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 max-w-2xl">
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
+          Welcome back, Developer <span class="inline-block animate-bounce">🚀</span>
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Access your favorite developer docs, database hubs, AI tools, and social portals directly from one central workspace.
+        </p>
+      </div>
+    </div> -->
+
+    <!-- Mobile Search Bar -->
+    <div class="block md:hidden">
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+        <input type="text" id="searchInputMobile" placeholder="Search apps and tools..."
+          class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all shadow-sm" />
+      </div>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex items-center justify-between flex-wrap gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 w-full sm:w-auto"
+        id="categoryFilterContainer">
+        <button data-category="all"
+          class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-600 text-white shadow-md shadow-brand-500/20">
+          All Category
+        </button>
+
+        <!-- <button data-category="dev"
+          class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-200/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-800">
+          Development
+        </button>
+        <button data-category="social"
+          class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-200/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-800">
+          Social & Protected
+        </button>
+        <button data-category="db"
+          class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-200/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-800">
+          Database
+        </button>
+        <button data-category="ai"
+          class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-200/80 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-800">
+          AI & Future
+        </button>-->
+
+        
+      </div> 
+
+        <!-- Live Search Counter -->
+        <!-- <div class="text-xs font-semibold text-slate-400 dark:text-slate-500 hidden sm:block" id="matchingCount">
+        Showing 10 apps
+      </div> -->
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" id="cardsGrid">
+
+        <!-- Card A1: Time Table -->
+
+        <a href="https://bhagaminingph.github.io/TimeTable/" target="_self" data-category="dev"
+          data-name="w3schools documentation web tutorials"
+          class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-fuchsia-500/10 hover:border-fuchsia-500/50">
+          <div class="w-full flex justify-end">
+            <span
+              class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">Time_Table</span>
+          </div>
+          <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-1">
+            <div
+              class="w-12 h-12 rounded-2xl bg-fuchsia-600 text-white font-extrabold text-xl flex items-center justify-center shadow-lg shadow-emerald-600/30">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+
+            </div>
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-fuchsia-500 transition-colors">Time
+              Table</span>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center gap-1">
+            <span>Bhaga mining college</span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+          </div>
+        </a>
+
+
+        <!-- Card 1: Polytechnic -->
+        <a href="https://bhagaminingph.github.io/polytechnic_entrance/" target="_self" data-category="dev"
+          data-name="google search browser"
+          class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-400/50">
+          <div class="w-full flex justify-end">
+            <span
+              class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">MCQ</span>
+          </div>
+          <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+
+            <div
+              class="w-12 h-12 rounded-2xl bg-blue-500 text-white font-extrabold text-xl flex items-center justify-center shadow-lg shadow-emerald-600/30">
+
+              <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 20v-9l-4 1.125V20h4Zm0 0h8m-8 0V6.66667M16 20v-9l4 1.125V20h-4Zm0 0V7m0 0V4h4v3h-4ZM6 8l6-4 4 2.66667M11 9h2m-2 3h2" />
+              </svg>
+            </div>
+
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-blue-500 transition-colors">Polytechnic</span>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center gap-1">
+            <span>Entrance Exam </span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+          </div>
+        </a>
+
+
+
+
+        <!-- Card 4: W3Schools -->
+        <a href="https://p-hembram.github.io/CMR-2017/" target="_self" data-category="dev"
+          data-name="w3schools documentation web tutorials"
+          class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/50">
+          <div class="w-full flex justify-end">
+            <span
+              class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">Quiz</span>
+          </div>
+          <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-1">
+            <div
+              class="w-12 h-12 rounded-2xl bg-orange-600 text-white font-extrabold text-sm flex items-center justify-center shadow-lg shadow-emerald-600/30">
+              CMR
+            </div>
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-emerald-500 transition-colors">CMR-2017</span>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center gap-1">
+            <span>Coal Mines Regulations, 2017</span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+          </div>
+        </a>
+
+        <!-- Card 5: JavaScript -->
+        <a href="https://bhagaminingph.github.io/sardar_list/" target="_self" data-category="dev"
+          data-name="javascript js mdn web docs"
+          class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400/50">
+          <div class="w-full flex justify-end">
+            <span
+              class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">Flashcards</span>
+          </div>
+          <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+            <div
+              class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-900 font-black text-sm flex items-center justify-end pr-2 pb-1 shadow-lg shadow-amber-400/30">
+              WCL
+            </div>
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-amber-500 transition-colors">WCL</span>
+          </div>
+          <div class="text-[12px] text-slate-400 flex items-center gap-1">
+            <span>Mining Sardar</span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+          </div>
+        </a>
+
+        <!-- Card 2: Facebook (Password Protected) -->
+        <a href="javascript:void(0)" data-url="https://www.facebook.com" data-category="social"
+          data-name="facebook social"
+          class="card-item protected-card glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-600/10 hover:border-blue-500/50">
+          <div class="w-full flex justify-between items-center">
+            <span
+              class="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+              <i class="fa-solid fa-lock text-[9px]"></i> Protected
+            </span>
+            <span class="text-[10px] font-bold text-slate-400">Social</span>
+          </div>
+
+          <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+            <div
+              class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30">
+              <i class="fa-brands fa-facebook-f text-2xl"></i>
+            </div>
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-blue-600 transition-colors">Facebook</span>
+          </div>
+
+          <div class="text-[11px] text-slate-400 flex items-center gap-1">
+            <span>Click to Unlock</span>
+            <i class="fa-solid fa-key text-[9px] text-amber-500"></i>
+          </div>
+        </a>
+
+
+        <!-- Card 3: Instagram (Password Protected) -->
+        <a href="javascript:void(0)" data-url="https://www.instagram.com" data-category="social"
+          data-name="instagram social photo"
+          class="card-item protected-card glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-pink-500/10 hover:border-pink-500/50">
+          <div class="w-full flex justify-between items-center">
+            <span
+              class="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+              <i class="fa-solid fa-lock text-[9px]"></i> Protected
+            </span>
+            <span class="text-[10px] font-bold text-slate-400">Social</span>
+          </div>
+          <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+            <div
+              class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-lg shadow-pink-500/30">
+              <i class="fa-brands fa-instagram text-2xl"></i>
+            </div>
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-pink-500 transition-colors">Instagram</span>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center gap-1">
+            <span>Click to Unlock</span>
+            <i class="fa-solid fa-key text-[9px] text-amber-500"></i>
+          </div>
+        </a>
+
+
+
+
+
+
+        <!-- Card 6: Django -->
+        <!-- <a href="https://www.djangoproject.com" target="_blank" data-category="dev"
+        data-name="django python web framework backend"
+        class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-800/20 hover:border-emerald-700/50">
+        <div class="w-full flex justify-end">
+          <span
+            class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">Framework</span>
+        </div>
+        <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+          <div
+            class="w-12 h-12 rounded-2xl bg-emerald-900 text-emerald-300 font-extrabold text-sm flex items-center justify-center shadow-lg shadow-emerald-900/40 border border-emerald-700/50">
+            dj
+          </div>
+          <span
+            class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-emerald-600 transition-colors">Django</span>
+        </div>
+        <div class="text-[11px] text-slate-400 flex items-center gap-1">
+          <span>djangoproject.com</span>
+          <i
+            class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </a> -->
+
+        <!-- Card 7: AI Tech -->
+        <!-- <a href="#" data-category="ai" data-name="ai tech artificial intelligence future model"
+        class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-cyan-500/20 hover:border-cyan-400/50 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-600/10 pointer-events-none">
+        </div>
+        <div class="w-full flex justify-end relative z-10">
+          <span
+            class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-500 border border-cyan-500/20 animate-pulse">
+            Future
+          </span>
+        </div>
+        <div
+          class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2 relative z-10">
+          <div
+            class="w-12 h-12 rounded-2xl bg-slate-900 text-cyan-400 border border-cyan-500/40 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+            <i class="fa-solid fa-brain text-xl animate-pulse"></i>
+          </div>
+          <span
+            class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-cyan-400 transition-colors">AI
+            Tech Hub</span>
+        </div>
+        <div class="text-[11px] text-slate-400 flex items-center gap-1 relative z-10">
+          <span>AI Neural Suite</span>
+          <i class="fa-solid fa-sparkles text-[9px] text-cyan-400"></i>
+        </div>
+      </a> -->
+
+        <!-- Card 8: Python -->
+        <!-- <a href="https://www.python.org" target="_blank" data-category="dev" data-name="python programming language code"
+        class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-sky-500/10 hover:border-sky-400/50">
+        <div class="w-full flex justify-end">
+          <span
+            class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400">Language</span>
+        </div>
+        <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+          <div
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-600 to-amber-400 p-2.5 flex items-center justify-center shadow-lg shadow-sky-500/20">
+            <i class="fa-brands fa-python text-white text-2xl"></i>
+          </div>
+          <span
+            class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-sky-500 transition-colors">Python</span>
+        </div>
+        <div class="text-[11px] text-slate-400 flex items-center gap-1">
+          <span>python.org</span>
+          <i
+            class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </a> -->
+
+        <!-- Card 9: MongoDB -->
+        <!-- <a href="https://www.mongodb.com" target="_blank" data-category="db" data-name="mongodb database nosql store"
+        class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-500/50">
+        <div class="w-full flex justify-end">
+          <span
+            class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">NoSQL</span>
+        </div>
+        <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+          <div
+            class="w-12 h-12 rounded-2xl bg-slate-900 text-emerald-500 border border-emerald-500/30 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+            <i class="fa-solid fa-leaf text-xl"></i>
+          </div>
+          <span
+            class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-emerald-500 transition-colors">MongoDB</span>
+        </div>
+        <div class="text-[11px] text-slate-400 flex items-center gap-1">
+          <span>mongodb.com</span>
+          <i
+            class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </a> -->
+
+        <!-- Card 10: MySQL -->
+        <!-- <a href="https://www.mysql.com" target="_blank" data-category="db" data-name="mysql database relational sql query"
+        class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-400/50">
+        <div class="w-full flex justify-end">
+          <span
+            class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400">SQL</span>
+        </div>
+        <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+          <div
+            class="w-12 h-12 rounded-2xl bg-sky-800 text-sky-200 flex items-center justify-center shadow-lg shadow-sky-800/30">
+            <i class="fa-solid fa-database text-xl"></i>
+          </div>
+          <span
+            class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-sky-500 transition-colors">MySQL</span>
+        </div>
+        <div class="text-[11px] text-slate-400 flex items-center gap-1">
+          <span>mysql.com</span>
+          <i
+            class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-0 group-hover:opacity-100 transition-opacity"></i>
+        </div>
+      </a> -->
+
+
+
+
+
+
+      </div>
+
+      <!-- Empty Search State -->
+      <div id="noResultsState" class="hidden py-16 text-center flex-col items-center justify-center">
+        <div
+          class="w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-400 text-2xl mb-4">
+          <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </div>
+        <h3 class="font-bold text-lg text-slate-700 dark:text-slate-300">No matching apps found</h3>
+        <p class="text-xs text-slate-400 mt-1 max-w-xs">Try searching for another keyword or switch category filters.
+        </p>
+      </div>
+
+  </main>
+
+
+
+  <!-- Interactive Password Modal Overlay -->
+  <div id="passwordModal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+
+    <div id="modalCard"
+      class="glass-modal w-full max-w-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col items-center text-center">
+
+      <!-- Animated Lock Icon Badge -->
+      <div id="lockBadge"
+        class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-white flex items-center justify-center shadow-lg shadow-amber-500/30 mb-4 transition-transform">
+        <i class="fa-solid fa-lock text-2xl"></i>
+      </div>
+
+      <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Security Access</h2>
+      <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Enter access code of User-1 | User-2 | User-3.</p>
+
+      <!-- Password Input Field -->
+      <div class="w-full relative mb-3">
+        <input type="password" id="cardPassword" placeholder="Enter Passcode"
+          class="w-full px-4 py-3 bg-white/80 dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700 rounded-xl text-center text-slate-900 dark:text-white text-base tracking-widest font-mono focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all" />
+      </div>
+
+      <!-- Error Message Box -->
+      <div id="errorMsg"
+        class="hidden w-full text-xs text-red-500 dark:text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl p-3 mb-4 text-left leading-relaxed">
+        <p class="font-semibold flex items-center gap-1.5 mb-0.5">
+          <i class="fa-solid fa-triangle-exclamation"></i> Access Denied
+        </p>
+        <p class="text-[11px] opacity-90">Incorrect code. Contact <strong>Prakash</strong> from the Mining branch for
+          authorization.</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3 w-full mt-2">
+        <button id="cancelPassBtn"
+          class="flex-1 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 font-semibold text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800 transition-all">
+          Cancel
+        </button>
+        <button id="submitPassBtn"
+          class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 text-white font-semibold text-xs shadow-lg shadow-brand-500/25 hover:brightness-110 active:scale-95 transition-all">
+          Unlock <i class="fa-solid fa-arrow-right ml-1"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer
+    class="w-full py-6 text-center text-xs text-slate-400 dark:text-slate-600 border-t border-slate-200/60 dark:border-slate-900 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>&copy; 2026 ph-Mining Launcher. </p>
+      <!-- <div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+        <span class="inline-flex items-center gap-1"><i class="fa-solid fa-bolt text-amber-500"></i> Fast Workspace</span>
+        <span class="inline-flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-500"></i> Secure Node</span>
+      </div> -->
+    </div>
+  </footer>
+
+  <!-- Application Logic JavaScript -->
+  <script src="my.js"></script>
+</body>
+
+</html>
