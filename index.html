@@ -63,7 +63,7 @@
       </div>
 
       <!-- Quick Search Bar (Header integration) -->
-      <div class="flex-1 max-w-md hidden md:block">
+      <div class="flex-1 max-w-md hidden md:block ">
         <div class="relative">
           <i
             class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-sm"></i>
@@ -86,7 +86,7 @@
     </div>
   </header>
 
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-8">
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-3 md:gap-8">
 
     <!-- Hero / Welcome Banner -->
     <!-- <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-6 sm:p-8 text-white shadow-2xl border border-slate-800">
@@ -102,8 +102,8 @@
     </div> -->
 
     <!-- Mobile Search Bar -->
-    <div class="block md:hidden">
-      <div class="relative">
+    <div class="block  md:hidden ">
+      <div class="relative ">
         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
         <input type="text" id="searchInputMobile" placeholder="Search apps and tools..."
           class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all shadow-sm" />
@@ -111,8 +111,8 @@
     </div>
 
     <!-- Category Filter Tabs -->
-    <div class="flex items-center justify-between flex-wrap gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
-      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 w-full sm:w-auto"
+    <div class="flex items-center justify-between flex-wrap gap-3  pb-1  border-b border-slate-200 dark:border-slate-800">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1  w-full sm:w-auto"
         id="categoryFilterContainer">
         <button data-category="all"
           class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-600 text-white shadow-md shadow-brand-500/20">
@@ -147,7 +147,7 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6" id="cardsGrid">
 
-        <!-- Card A1: Time Table -->
+        <!-- Card 1: Time Table -->
 
         <a href="https://bhagaminingph.github.io/TimeTable/" target="_self" data-category="dev"
           data-name="w3schools documentation web tutorials"
@@ -178,7 +178,34 @@
         </a>
 
 
-        <!-- Card 1: Polytechnic -->
+         <!-- Card 2: 3rd same (Password Protected) -->
+        <a href="javascript:void(0)" data-url="https://www.google.com"  data-category="social"
+          data-name="facebook social"
+          class="card-item protected-card glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-600/10 hover:border-blue-500/50">
+          <div class="w-full flex justify-between items-center">
+            <span
+              class="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+              <i class="fa-solid fa-lock text-[9px]"></i> Protected
+            </span>
+            <span class="text-[10px] font-bold text-slate-400">PYQ</span>
+          </div>
+
+          <div class="my-auto transition-transform group-hover:scale-110 duration-300 flex flex-col items-center gap-2">
+            <div
+              class="w-12 h-12 rounded-2xl bg-purple-600 text-white font-extrabold text-sm flex items-center justify-center shadow-lg shadow-emerald-600/30">
+              3rd SAM
+            </div>
+            <span
+              class="font-bold text-slate-800 dark:text-slate-100 text-sm group-hover:text-purple-600 transition-colors">3rd  Samester</span>
+          </div>
+
+          <div class="text-[11px] text-slate-400 flex items-center gap-1">
+            <span>Click to Unlock</span>
+            <i class="fa-solid fa-key text-[9px] text-amber-500"></i>
+          </div>
+        </a>
+
+        <!-- Card 2: Polytechnic -->
         <a href="https://bhagaminingph.github.io/polytechnic_entrance/" target="_self" data-category="dev"
           data-name="google search browser"
           class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-400/50">
@@ -211,7 +238,7 @@
 
 
 
-        <!-- Card 4: W3Schools -->
+        <!-- Card 3: CMR-2017 -->
         <a href="https://p-hembram.github.io/CMR-2017/" target="_self" data-category="dev"
           data-name="w3schools documentation web tutorials"
           class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/50">
@@ -234,7 +261,7 @@
           </div>
         </a>
 
-        <!-- Card 5: JavaScript -->
+        <!-- Card 4: WCL -->
         <a href="https://bhagaminingph.github.io/sardar_list/" target="_self" data-category="dev"
           data-name="javascript js mdn web docs"
           class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400/50">
@@ -257,7 +284,7 @@
           </div>
         </a>
 
-        <!-- Card 2: Facebook (Password Protected) -->
+        <!-- Card 5: Facebook (Password Protected) -->
         <a href="javascript:void(0)" data-url="https://www.facebook.com" data-category="social"
           data-name="facebook social"
           class="card-item protected-card glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-600/10 hover:border-blue-500/50">
@@ -285,7 +312,7 @@
         </a>
 
 
-        <!-- Card 3: Instagram (Password Protected) -->
+        <!-- Card 6: Instagram (Password Protected) -->
         <a href="javascript:void(0)" data-url="https://www.instagram.com" data-category="social"
           data-name="instagram social photo"
           class="card-item protected-card glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-pink-500/10 hover:border-pink-500/50">
@@ -315,7 +342,7 @@
 
 
 
-        <!-- Card 6: Django -->
+        <!-- Card 7: Django -->
         <!-- <a href="https://www.djangoproject.com" target="_blank" data-category="dev"
         data-name="django python web framework backend"
         class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-800/20 hover:border-emerald-700/50">
@@ -338,7 +365,7 @@
         </div>
       </a> -->
 
-        <!-- Card 7: AI Tech -->
+        <!-- Card 8: AI Tech -->
         <!-- <a href="#" data-category="ai" data-name="ai tech artificial intelligence future model"
         class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-cyan-500/20 hover:border-cyan-400/50 overflow-hidden">
         <div
@@ -366,7 +393,7 @@
         </div>
       </a> -->
 
-        <!-- Card 8: Python -->
+        <!-- Card 9: Python -->
         <!-- <a href="https://www.python.org" target="_blank" data-category="dev" data-name="python programming language code"
         class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-sky-500/10 hover:border-sky-400/50">
         <div class="w-full flex justify-end">
@@ -388,7 +415,7 @@
         </div>
       </a> -->
 
-        <!-- Card 9: MongoDB -->
+        <!-- Card 10: MongoDB -->
         <!-- <a href="https://www.mongodb.com" target="_blank" data-category="db" data-name="mongodb database nosql store"
         class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-500/50">
         <div class="w-full flex justify-end">
@@ -410,7 +437,7 @@
         </div>
       </a> -->
 
-        <!-- Card 10: MySQL -->
+        <!-- Card 11: MySQL -->
         <!-- <a href="https://www.mysql.com" target="_blank" data-category="db" data-name="mysql database relational sql query"
         class="card-item glass-card card-sheen group relative rounded-2xl p-5 flex flex-col justify-between items-center text-center h-44 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-400/50">
         <div class="w-full flex justify-end">
